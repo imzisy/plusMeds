@@ -33,7 +33,25 @@
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     self.viewController = [[MainViewController alloc] init];
-    return [super application:application didFinishLaunchingWithOptions:launchOptions];
+}
+
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+    
+    if (snapShot) {
+        
+        [snapShot removeFromSuperview];
+        snapShot = nil;
+    }
+}
+- (void)applicationWillResignActive:(UIApplication *)application
+{
+    snapShot = [[UIImageView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    snapShot.backgroundColor = [UIColor whiteColor];
+    snapShot.image = [UIImage imageNamed:@"Default-568h@2x~iphone.png"];
+    
+    [self.window addSubview:snapShot];
+    
 }
 
 @end
