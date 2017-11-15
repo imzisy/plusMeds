@@ -28,8 +28,8 @@
 #import <Cordova/CDVViewController.h>
 #import <Cordova/CDVAppDelegate.h>
 
-@interface AppDelegate : NSObject <UIApplicationDelegate>{
-    UIImageView * snapShot;
+@interface AppDelegate : CDVAppDelegate {
+UIImageView * snapShot;
 }
 
 @end

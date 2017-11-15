@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01FE36CC1FBC230F001C6C16 /* Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = 01FE36CB1FBC230F001C6C16 /* Validation.m */; };
+		01FE36D11FBC2A50001C6C16 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FE36CF1FBC2A50001C6C16 /* Fabric.framework */; };
+		01FE36D21FBC2A50001C6C16 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FE36D01FBC2A50001C6C16 /* Crashlytics.framework */; };
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
@@ -39,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01FE36CA1FBC22CE001C6C16 /* validation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = validation.h; sourceTree = "<group>"; };
+		01FE36CB1FBC230F001C6C16 /* Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Validation.m; sourceTree = "<group>"; };
+		01FE36CF1FBC2A50001C6C16 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		01FE36D01FBC2A50001C6C16 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		0207DA571B56EA530066E2B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Plus65 Meds/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		04B1CA2C1F9CA42800895FD5 /* Plus65 Meds.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Plus65 Meds.entitlements"; path = "Plus65 Meds/Plus65 Meds.entitlements"; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +86,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
+				01FE36D21FBC2A50001C6C16 /* Crashlytics.framework in Frameworks */,
+				01FE36D11FBC2A50001C6C16 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +102,8 @@
 				302D95F014D2391D003F00A1 /* MainViewController.xib */,
 				1D3623240D0F684500981E51 /* AppDelegate.h */,
 				1D3623250D0F684500981E51 /* AppDelegate.m */,
+				01FE36CA1FBC22CE001C6C16 /* validation.h */,
+				01FE36CB1FBC230F001C6C16 /* Validation.m */,
 			);
 			name = Classes;
 			path = "Plus65 Meds/Classes";
@@ -109,6 +120,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				01FE36CF1FBC2A50001C6C16 /* Fabric.framework */,
+				01FE36D01FBC2A50001C6C16 /* Crashlytics.framework */,
 				04B1CA2C1F9CA42800895FD5 /* Plus65 Meds.entitlements */,
 				EB87FDF41871DAF40020F90C /* config.xml */,
 				EB87FDF31871DA8E0020F90C /* www */,
@@ -211,6 +224,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				01FE36CE1FBC2A2D001C6C16 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -286,6 +300,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		01FE36CE1FBC2A2D001C6C16 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 5ef72fcc8695ecb69fb8c8bf93861c08bac88aef c02b0029fb16785c82919603575ef54a7ae27434805c6d9635c2538642c2cd71";
+		};
 		304B58A110DAC018002A0835 /* Copy www directory */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +339,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				F88D7FE8D77B4D6F872317F7 /* CDVDevice.m in Sources */,
+				01FE36CC1FBC230F001C6C16 /* Validation.m in Sources */,
 				43DFAA69BCF14969A3F05C00 /* CDVSplashScreen.m in Sources */,
 				A5C800C7C0894E56A5A2B677 /* CDVViewController+SplashScreen.m in Sources */,
 				D44E4C1D22A0402884458ADB /* CDVStatusBar.m in Sources */,
@@ -344,6 +372,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = A3YFPVFB9M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -372,6 +404,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = A3YFPVFB9M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Plus65 Meds/Plus65 Meds-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;

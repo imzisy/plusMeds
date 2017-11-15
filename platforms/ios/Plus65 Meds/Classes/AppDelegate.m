@@ -27,12 +27,26 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "Validation.h"
+
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
+
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
+
+    if([Validation jailbroken]){
+     
+    }
     self.viewController = [[MainViewController alloc] init];
+    [Fabric with:@[[Crashlytics class]]];
+
+    return [super application:application didFinishLaunchingWithOptions:launchOptions];
+    
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
