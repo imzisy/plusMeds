@@ -1,4 +1,4 @@
-APP.factory('DrugsService', function(drugsData, $log) {
+APP.factory('DrugsService', function(drugsData, $log, $http, $ionicLoading, $ionicPopup) {
   var _data = drugsData;
 
   function initDrugs() {
@@ -6,8 +6,24 @@ APP.factory('DrugsService', function(drugsData, $log) {
     // _data = get data from internet
     // check localstorage
     // _data = get data from localstorage
+    $ionicLoading.show({
+      template: 'Please Wait, updating data..'
+    })
+
+    $http.get('http://salamsolutions.com.my/apps/plusmeds/drugs.js')
+      .then(function success(data) {
+        _data = data;
+        $ionicLoading.hide()
+      }, function fail(err) {
+        $ionicLoading.hide()
+        $ionicPopup.alert({
+          title: 'Error',
+          template: 'was not able to update data, please try again later.'
+        })
+      })
+
+
   }
-  initDrugs();
 
   function _search(source, query) {
     var results = [];
@@ -54,7 +70,7 @@ APP.factory('DrugsService', function(drugsData, $log) {
       return data;
 
     },
-
+    initDrugs: initDrugs,
 
   }
 });

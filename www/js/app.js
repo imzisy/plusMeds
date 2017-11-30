@@ -8,7 +8,7 @@ APP = angular.module('plus65', ['ionic', 'ui.bootstrap'])
 APP.config(function($ionicConfigProvider) {
   $ionicConfigProvider.scrolling.jsScrolling(false)
 })
-APP.run(function($ionicPlatform, $rootScope, $state, $ionicHistory) {
+APP.run(function($ionicPlatform, $rootScope, $state, $ionicHistory, DrugsService) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -20,6 +20,9 @@ APP.run(function($ionicPlatform, $rootScope, $state, $ionicHistory) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault()
     }
+
+    DrugsService.initDrugs();
+
   })
   $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
     $ionicHistory.clearHistory();
